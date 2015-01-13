@@ -1,0 +1,4 @@
+window.pageViewer.check(1,1);
+window.pageViewer.update('0.8397750831209123', 'http://images.boldchat.com/ext/images/buttons/float/default/right.png', null);
+window.pageViewer.update('0.10163934668526053', 'available', '0.0031763645820319653');
+window.pageViewer.update('0.4798349079210311', 'available', '0.23748285812325776');

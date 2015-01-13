@@ -1,0 +1,52 @@
+var _vis_opt_heatmap = 0;if(!_vwo_code.finished() || _vis_opt_heatmap){clearTimeout(_vwo_settings_timer);
+if(_vis_opt_heatmap && !document.getElementById('_vis_opt_path_hides')){var a=document.createElement('style');a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');document.getElementsByTagName('head')[0].appendChild(a);}
+var _vwo_acc_id=78745,_vwo_exp_ids=[],_vwo_exp={},_vwo_cookieDomain='readers.com';
+_vwo_exp_ids.push('111');
+_vwo_exp['111'] = {};
+_vwo_exp['111'].name = "REA - 1\/7 Warehouse Clearance";
+_vwo_exp['111'].version = 2;
+_vwo_exp['111'].clickmap = 1;
+_vwo_exp['111'].type = 'VISUAL_AB';
+_vwo_exp['111'].status = 'NOT_STARTED';
+_vwo_exp['111'].pc_traffic = 100;
+_vwo_exp['111'].url = 'http://www.readers.com';
+_vwo_exp['111'].urlRegex = "^http\\:\\\/\\\/readers\\.com\\\/?(?:[\\?#].*)?$|^http\\:\\\/\\\/readers\\.com\\\/?(?:[\\?#].*)?$";
+_vwo_exp['111'].exclude_url = '';
+_vwo_exp['111'].multiple_domains = 0;
+_vwo_exp['111'].segment_code = "_vwo_s().f_nin(_vwo_s().qP('utm_medium'), 'cpc') && (_vwo_s().f_nin(_vwo_s().rt(), 'org'))";
+_vwo_exp['111'].sections = {};
+_vwo_exp['111'].sections['1'] = {};
+_vwo_exp['111'].sections['1'].name = "";
+_vwo_exp['111'].sections['1'].path = "";
+_vwo_exp['111'].sections['1'].variations = {};
+_vwo_exp['111'].sections['1'].variation_names = {};
+_vwo_exp['111'].sections['1'].segment = {};
+_vwo_exp['111'].sections['1'].variation_names['1'] = "Control";
+_vwo_exp['111'].sections['1'].variations['1'] = "[]";
+_vwo_exp['111'].sections['1'].segment['1'] = '1';
+_vwo_exp['111'].sections['1'].variation_names['2'] = "Variation-1";
+_vwo_exp['111'].sections['1'].variations['2'] = "[{\"js\":\"<script type=\\\"text\\\/javascript\\\">\\nvwo_$('.featured-banner.oct_hero .inner').wrap('<a href=\\\"http:\\\/\\\/www.readers.com\\\/reading-glasses-sale-items.html\\\">');\\nvwo_$('.featured-banner.oct_hero .content-container').html('<div class=\\\"oct_hero_main\\\"> <div class=\\\"oct_subtitle\\\"> <h5>Warehouse <br>Clearance<\\\/h5> <h6>Save Up to 75% Off<\\\/h6> <div class=\\\"button-container\\\"> <div class=\\\"btn nobr flash_sale\\\">Shop Now \\u203a<\\\/div> <\\\/div> <div class=\\\"disclaimer\\\">Ends midnight ET 01\\\/18\\\/15<\\\/div> <\\\/div> <\\\/div>');\\n<\\\/script>\\n\\n\\r<style>\\n.header .main-navigation ul li.has-dropdown.n4,\\n.header .main-navigation ul li.has-dropdown.n5,\\n.header .main-navigation ul li.has-dropdown.n6,\\n.header .main-navigation ul li.has-dropdown.n7,\\n.homepage .welcome-chunks .best-sellers,\\n.homepage .welcome-chunks .contentblocks.holiday-cookbook,\\n.homepage .welcome-chunks .contentblocks.holiday-guide-2014,\\n.homepage .welcome-chunks .contentblocks.holiday-best-sellers,\\n.homepage .welcome-chunks .what-people-are-saying,\\n.homepage .welcome-chunks > .five.columns,\\n.homepage .welcome-chunks .social.text-center,\\n.homepage .welcome-chunks .letter.last,\\n.featured-banner.oct_hero .oct_title_text {\\n  display: none; }\\n\\n.top-bar ul > li.n9 {\\n  width: 14%; }\\n\\n.top-bar ul > li.n10 {\\n  width: 14%; }\\n\\n.footer .value-prop {\\n  margin-top: 24px; }\\n\\n.featured-banner.oct_hero .inner {\\n  background: url(http:\\\/\\\/www.readers.com\\\/blog\\\/wp-content\\\/uploads\\\/2014\\\/12\\\/rea_warehouse_clearance_hero.jpg) no-repeat;\\n  background-position: center left; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .inner {\\n      background: url(http:\\\/\\\/www.readers.com\\\/blog\\\/wp-content\\\/uploads\\\/2014\\\/12\\\/rea_warehouse_clearance_hero_mobile.jpg) no-repeat;\\n      background-position: center left;\\n      height: 250px;\\n      margin-bottom: 10px; } }\\n\\n.featured-banner.oct_hero .content-container {\\n  width: 450px;\\n  margin: 4.5% 0 0 8%;\\n  position: relative; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .content-container {\\n      margin: 0;\\n      width: 100%;\\n      padding-top: 15px; } }\\n\\n.featured-banner .oct_hero_main {\\n  position: relative;\\n  top: 0;\\n  right: auto; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner .oct_hero_main {\\n      text-align: center; } }\\n\\n.featured-banner.oct_hero a {\\n  text-decoration: none; }\\n\\n.featured-banner.oct_hero .button-container {\\n  width: 100%; }\\n  .featured-banner.oct_hero .button-container .btn.flash_sale {\\n    display: block;\\n    width: 220px;\\n    margin: 0 auto;\\n    font-family: Georgia, sans-serif;\\n    font-size: 16px;\\n    font-weight: normal;\\n    text-align: center;\\n    color: #fff;\\n    background-color: rgba(255, 255, 255, 0);\\n    border: 2px solid #fff;\\n    text-align: center;\\n    padding: 10px 20px 11px;\\n    -moz-box-sizing: border-box;\\n         box-sizing: border-box;\\n    letter-spacing: .5px;\\n    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.01);\\n    -webkit-transition: 200ms all ease-out;\\n            transition: 200ms all ease-out;\\n    cursor: pointer;\\n    letter-spacing: 1px; }\\n    .featured-banner.oct_hero .button-container .btn.flash_sale:hover {\\n      background-color: rgba(255, 255, 255, 0.2); }\\n    @media only screen and (max-width: 600px) {\\n      .featured-banner.oct_hero .button-container .btn.flash_sale {\\n        width: 250px; } }\\n\\n.featured-banner.oct_hero .oct_hero_main .oct_subtitle h5 {\\n  font-weight: bold;\\n  font-size: 52px;\\n  line-height: 1;\\n  letter-spacing: -1px;\\n  margin: 5px 0 10px 0;\\n  color: #fff; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .oct_hero_main .oct_subtitle h5 {\\n      font-size: 36px; } }\\n.featured-banner.oct_hero .oct_hero_main .oct_subtitle h6 {\\n  color: #fff;\\n  font-size: 32px;\\n  line-height: 1.1;\\n  margin: 0 0 15px 0; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .oct_hero_main .oct_subtitle h6 {\\n      font-size: 23px; } }\\n.featured-banner.oct_hero .oct_hero_main .oct_subtitle .promo-code {\\n  color: #fff;\\n  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;\\n  font-size: 14px;\\n  letter-spacing: 0.5px;\\n  margin-bottom: 20px; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .oct_hero_main .oct_subtitle .promo-code {\\n      font-size: 13px; } }\\n.featured-banner.oct_hero .oct_hero_main .oct_subtitle .disclaimer {\\n  font-family: Arial, sans-serif;\\n  color: rgba(255, 255, 255, 0.6);\\n  font-size: 12px;\\n  line-height: 1;\\n  margin-top: 10px; }\\n  @media only screen and (max-width: 600px) {\\n    .featured-banner.oct_hero .oct_hero_main .oct_subtitle .disclaimer {\\n      font-size: 11px; } }\\n\\n<\\\/style>;\",\"xpath\":\"HEAD\"}]";
+_vwo_exp['111'].sections['1'].segment['2'] = '1';
+_vwo_exp['111'].combs = {};
+_vwo_exp['111'].comb_n = {};
+_vwo_exp['111'].combs['1'] = 0;
+_vwo_exp['111'].comb_n['1'] = "Control";
+_vwo_exp['111'].combs['2'] = 1;
+_vwo_exp['111'].comb_n['2'] = "Variation-1";
+_vwo_exp['111'].goals = {};_vwo_exp['111'].goals['12'] = {};
+_vwo_exp['111'].goals['12'].urlRegex = "^.*\\\/cart\\.php\\?mode\\=order_message.*$";
+_vwo_exp['111'].goals['12'].type = 'SEPARATE_PAGE';
+_vwo_exp['111'].goals['13'] = {};
+_vwo_exp['111'].goals['13'].urlRegex = "^.*\\\/cart\\.php\\?mode\\=order_message.*$";
+_vwo_exp['111'].goals['13'].type = 'REVENUE_TRACKING';
+_vwo_exp['111'].goals['14'] = {};
+_vwo_exp['111'].goals['14'].urlRegex = "^http\\:\\\/\\\/readers\\.com\\\/reading\\-glasses\\-sale\\-items\\.html.*$";
+_vwo_exp['111'].goals['14'].type = 'SEPARATE_PAGE';
+_vwo_exp['111'].goals['15'] = {};
+_vwo_exp['111'].goals['15'].urlRegex = "^http\\:\\\/\\\/readers\\.com\\\/cart\\.php\\\/?(?:[\\?#].*)?$";
+_vwo_exp['111'].goals['15'].type = 'SEPARATE_PAGE';_vwo_exp['111'].third_party = {};
+var _vwo_style=document.getElementById('_vis_opt_path_hides'),_vwo_css='{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}';_vwo_style.parentNode.removeChild(_vwo_style);
+var _vis_opt_file = _vwo_code.use_existing_jquery() ? 'vanj-1420574400.js' : 'va-1420574400.js',
+_vwo_library_timer = setTimeout('_vwo_code.finish()',_vwo_code.library_tolerance()),
+_vis_opt_lib = (typeof _vis_opt_lib=='undefined')?'//dev.visualwebsiteoptimizer.com/'+_vis_opt_file:_vis_opt_lib;
+_vwo_code.load(_vis_opt_lib);}

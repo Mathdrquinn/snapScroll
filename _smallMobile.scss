@@ -1,0 +1,85 @@
+$left: -768px;
+@media all and (max-width: 600px) {
+  .container {
+    background-color: orange!important;
+  }
+  .small-media-hide {
+    display: none!important;
+  }
+  .featured-banner .inner {
+    max-height: 243px;
+    #carousel-container {
+      height: 100%;
+      #carousel-inner {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #carousel-ul {
+        left:$left;
+      }
+
+      #carousel-ul li{
+        max-width: 748px;
+        max-height: 243px;
+        overflow: hidden;
+
+      }
+
+      #carousel-ul li img {
+        max-width: 748px;
+      }
+
+      #carousel-ul li div[class^="carousel-content-"] {
+        left: 0px;
+        max-width: 600px;
+        width: 600px;
+        text-align: center;
+      }
+      h1 {
+
+      }
+      h3 {
+
+      }
+      p {
+
+      }
+      button {
+        a {
+        }
+      }
+      button:hover {
+        a {
+        }
+      }
+    }
+    #left-scroll, #right-scroll{
+
+    }
+    #left-scroll {
+    }
+    #left-scroll:after {
+
+    }
+    #left-scroll:hover {
+
+    }
+    #right-scroll {
+    }
+    #right-scroll:after {
+
+    }
+    #right-scroll:hover {
+
+    }
+    #dot-container {
+
+      #dot-inner {
+
+        .dot {
+        }
+      }
+    }
+  }
+}

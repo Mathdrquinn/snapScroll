@@ -1,0 +1,79 @@
+$left: -910px;
+@media all and (max-width: 1020px) {
+  body {
+    background-color: green!important;
+  }
+  .featured-banner .inner {
+    max-height: 289px;
+    #carousel-container {
+      height: 100%;
+      #carousel-inner {
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #carousel-ul {
+        left:$left;
+      }
+
+      #carousel-ul li{
+        max-width: 890px;
+        max-height: 289px;
+        overflow: hidden;
+
+      }
+
+      #carousel-ul li img[class^="carousel-image-"] {
+
+      }
+
+      #carousel-ul li div[class^="carousel-content-"] {
+        right: 10%;
+      }
+      h1 {
+
+      }
+      h3 {
+
+      }
+      p {
+
+      }
+      button {
+        a {
+        }
+      }
+      button:hover {
+        a {
+        }
+      }
+    }
+    #left-scroll, #right-scroll{
+
+    }
+    #left-scroll {
+    }
+    #left-scroll:after {
+
+    }
+    #left-scroll:hover {
+
+    }
+    #right-scroll {
+    }
+    #right-scroll:after {
+
+    }
+    #right-scroll:hover {
+
+    }
+    #dot-container {
+
+      #dot-inner {
+
+        .dot {
+        }
+      }
+    }
+  }
+}

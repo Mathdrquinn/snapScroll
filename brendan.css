@@ -1,0 +1,239 @@
+.featured-banner .inner {
+  padding: 0;
+  background: none !important;
+  /* Thanks to http://web.enavu.com/tutorials/making-an-infinite-jquery-carousel
+    for the help with the carousel */ }
+  .featured-banner .inner #carousel-container {
+    width: 100%;
+    position: relative;
+    height: 330px; }
+    .featured-banner .inner #carousel-container #carousel-inner {
+      float: left;
+      /* important for inline positioning */
+      width: 100%;
+      /* important (this width = width of list item(including margin) * items shown */
+      overflow: hidden;
+      /* important (hide the items outside the div) */
+      /* non-important styling bellow */
+      background: #fff;
+      height: 100%; }
+    .featured-banner .inner #carousel-container #carousel-ul {
+      position: relative;
+      left: -1010px;
+      /* important (this should be negative number of list items width(including margin) */
+      list-style-type: none;
+      /* removing the default styling for unordered list items */
+      margin: 0px;
+      padding: 0px;
+      width: 9999px;
+      /* important */
+      /* non-important styling bellow */
+      padding-bottom: 10px; }
+    .featured-banner .inner #carousel-container #carousel-ul li {
+      float: left;
+      /* important for inline positioning of the list items */
+      width: 1000px;
+      /* fixed width, important */
+      /* just styling bellow*/
+      position: relative;
+      height: 330px;
+      padding: 0px;
+      background: #fff;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      margin-left: 5px;
+      margin-right: 5px; }
+    .featured-banner .inner #carousel-container #carousel-ul li img[class^="carousel-image-"] {
+      /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
+      /* styling */
+      cursor: pointer;
+      cursor: hand;
+      border: 0px; }
+    .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      color: white;
+      max-width: 325px;
+      max-height: 225px;
+      overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] h1 {
+        line-height: 60px;
+        font-size: 6em;
+        color: white;
+        margin: 0; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] h3 {
+        font-size: 3em;
+        color: white;
+        margin: 0; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] p {
+        margin-bottom: 0; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] button {
+        transition: none;
+        border: 2px solid white;
+        font-size: 14px;
+        font-weight: normal;
+        background: none;
+        margin: 0;
+        margin-top: 20px; }
+        .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] button a {
+          padding: 10px 20px 11px;
+          display: block;
+          color: #fff;
+          text-decoration: none; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] button:hover {
+        background: #ffffff; }
+        .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] button:hover a {
+          color: #093347; }
+    .featured-banner .inner #carousel-container #left-scroll, .featured-banner .inner #carousel-container #right-scroll {
+      position: absolute;
+      top: 45%;
+      width: 30px;
+      height: 30px;
+      padding: 10px;
+      cursor: pointer;
+      cursor: hand;
+      color: white;
+      font-size: 30px;
+      background-color: #0f5474; }
+    .featured-banner .inner #carousel-container #left-scroll {
+      left: -15px; }
+    .featured-banner .inner #carousel-container #left-scroll:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #093347 transparent transparent;
+      bottom: -65px;
+      left: 0;
+      border-width: 7px 0px 58px 20px; }
+    .featured-banner .inner #carousel-container #right-scroll {
+      right: -15px; }
+    .featured-banner .inner #carousel-container #right-scroll:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #093347 transparent transparent;
+      bottom: -65px;
+      right: 0;
+      border-width: 7px 15px 58px 0px; }
+    .featured-banner .inner #carousel-container #dot-container {
+      text-align: center;
+      display: block;
+      position: absolute;
+      width: 100%;
+      bottom: 10px; }
+      .featured-banner .inner #carousel-container #dot-container #dot-inner {
+        display: block;
+        margin-left: auto; }
+        .featured-banner .inner #carousel-container #dot-container #dot-inner .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: none;
+          margin: 10px 15px 10px 15px;
+          border: 2px solid white;
+          border-radius: 100%; }
+        .featured-banner .inner #carousel-container #dot-container #dot-inner .white-dot {
+          background-color: white; }
+
+@media all and (max-width: 1020px) {
+  body {
+    background-color: green !important; }
+
+  .featured-banner .inner {
+    max-height: 289px; }
+    .featured-banner .inner #carousel-container {
+      height: 100%; }
+      .featured-banner .inner #carousel-container #carousel-inner {
+        height: 100%;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul {
+        left: -910px; }
+      .featured-banner .inner #carousel-container #carousel-ul li {
+        max-width: 890px;
+        max-height: 289px;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
+        right: 10%; } }
+@media all and (max-width: 910px) {
+  body {
+    background-color: blue !important; }
+
+  .small-media-hide {
+    display: none !important; }
+
+  .featured-banner .inner {
+    max-height: 243px; }
+    .featured-banner .inner #carousel-container {
+      height: 100%; }
+      .featured-banner .inner #carousel-container #carousel-inner {
+        height: 100%;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul {
+        left: -768px; }
+      .featured-banner .inner #carousel-container #carousel-ul li {
+        max-width: 748px;
+        max-height: 243px;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul li img {
+        max-width: 748px; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
+        right: 10%; } }
+@media all and (max-width: 768px) {
+  .container {
+    background-color: purple !important; }
+
+  .small-media-hide {
+    display: none !important; }
+
+  .featured-banner .inner {
+    max-height: 243px; }
+    .featured-banner .inner #carousel-container {
+      height: 100%; }
+      .featured-banner .inner #carousel-container #carousel-inner {
+        height: 100%;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul {
+        left: -768px; }
+      .featured-banner .inner #carousel-container #carousel-ul li {
+        max-width: 748px;
+        max-height: 243px;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul li img {
+        max-width: 748px; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
+        left: 5%;
+        max-width: 600px;
+        width: 600px;
+        text-align: center; } }
+@media all and (max-width: 600px) {
+  .container {
+    background-color: orange !important; }
+
+  .small-media-hide {
+    display: none !important; }
+
+  .featured-banner .inner {
+    max-height: 243px; }
+    .featured-banner .inner #carousel-container {
+      height: 100%; }
+      .featured-banner .inner #carousel-container #carousel-inner {
+        height: 100%;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul {
+        left: -768px; }
+      .featured-banner .inner #carousel-container #carousel-ul li {
+        max-width: 748px;
+        max-height: 243px;
+        overflow: hidden; }
+      .featured-banner .inner #carousel-container #carousel-ul li img {
+        max-width: 748px; }
+      .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
+        left: 0px;
+        max-width: 600px;
+        width: 600px;
+        text-align: center; } }
+
+/*# sourceMappingURL=brendan.css.map */

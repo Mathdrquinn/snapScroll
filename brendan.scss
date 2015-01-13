@@ -1,0 +1,173 @@
+$picWidth: 1000px;
+$containerWidth: 1010px;
+$left: -1010px;
+.featured-banner .inner {
+  padding:0;
+  background: none!important;
+/* Thanks to http://web.enavu.com/tutorials/making-an-infinite-jquery-carousel
+  for the help with the carousel */
+//////////////////////////////////////////////////////////////////////////////
+  #carousel-container {
+    width: 100%;
+    position: relative;
+    height: 330px;
+    #carousel-inner {
+      float:left; /* important for inline positioning */
+      width:100%; /* important (this width = width of list item(including margin) * items shown */
+      overflow: hidden;  /* important (hide the items outside the div) */
+      /* non-important styling bellow */
+      background: #fff;
+      height:100%;
+    }
+
+    #carousel-ul {
+      position:relative;
+      left:$left; /* important (this should be negative number of list items width(including margin) */
+      list-style-type: none; /* removing the default styling for unordered list items */
+      margin: 0px;
+      padding: 0px;
+      width:9999px; /* important */
+      /* non-important styling bellow */
+      padding-bottom:10px;
+    }
+
+    #carousel-ul li{
+      float: left; /* important for inline positioning of the list items */
+      width:$picWidth;  /* fixed width, important */
+      /* just styling bellow*/
+      position: relative;
+      height:330px;
+      padding:0px;
+      background: #fff;
+      margin-top:0px;
+      margin-bottom:0px;
+      margin-left:5px;
+      margin-right:5px;
+    }
+
+    #carousel-ul li img[class^="carousel-image-"] {
+      ; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
+      /* styling */
+      cursor:pointer;
+      cursor: hand;
+      border:0px;
+    }
+
+    #carousel-ul li div[class^="carousel-content-"] {
+      position: absolute;
+      top: 15%;
+      right: 10%;
+      color: white;
+      max-width: 325px;
+      max-height: 225px;
+      overflow: hidden;
+      h1 {
+        line-height: 60px;
+        font-size: 6em;
+        color: white;
+        margin:0;
+      }
+      h3 {
+        font-size: 3em;
+        color: white;
+        margin: 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      button {
+        transition: none;
+        border: 2px solid white;
+        font-size: 14px;
+        font-weight: normal;
+        background: none;
+        margin: 0;
+        margin-top: 20px;
+        a {
+          padding: 10px 20px 11px;
+          display: block;
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+      button:hover {
+        background: #ffffff;
+        a {
+          color: #093347;
+        }
+      }
+    }
+    #left-scroll, #right-scroll{
+      position: absolute;
+      top: 45%;
+      width: 30px;
+      height:30px;
+      padding: 10px;
+      cursor: pointer;
+      cursor: hand;
+      color: white;
+      font-size: 30px;
+      background-color: lighten(#093347, 10%);
+    }
+    #left-scroll {
+      left:-15px;
+    }
+    #left-scroll:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #093347 transparent transparent;
+      bottom: -65px;
+      left: 0;
+      border-width: 7px 0px 58px 20px;
+    }
+    #left-scroll:hover {
+
+    }
+    #right-scroll {
+      right:-15px;
+    }
+    #right-scroll:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-style: solid;
+      border-color: #093347 transparent transparent;
+      bottom: -65px;
+      right: 0;
+      border-width: 7px 15px 58px 0px;
+    }
+    #right-scroll:hover {
+
+    }
+    #dot-container {
+      text-align: center;
+      display: block;
+      position: absolute;
+      width:100%;
+      bottom:10px;
+      #dot-inner {
+        display: block;
+        margin-left: auto;
+        .dot {
+          display: inline-block;
+          width: 10px;
+          height: 10px;
+          background-color: none;
+          margin: 10px 15px 10px 15px;
+          border: 2px solid white;
+          border-radius: 100%;
+        }
+        .white-dot {
+          background-color:white;
+        }
+      }
+    }
+  }
+}
+
+@import 'Media';
+@import 'tablet';
+@import 'mediumMobile';
+@import "smallMobile";
