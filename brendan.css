@@ -25,7 +25,7 @@
       /* removing the default styling for unordered list items */
       margin: 0px;
       padding: 0px;
-      width: 9999px;
+      width: 500%;
       /* important */
       /* non-important styling bellow */
       padding-bottom: 10px; }
@@ -56,7 +56,8 @@
       color: white;
       max-width: 325px;
       max-height: 225px;
-      overflow: hidden; }
+      overflow: hidden;
+      padding: 5px; }
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] h1 {
         line-height: 60px;
         font-size: 6em;
@@ -161,6 +162,10 @@
   body {
     background-color: blue !important; }
 
+  .oct_hero {
+    left: -5px;
+    padding-left: 0px; }
+
   .small-media-hide {
     display: none !important; }
 
@@ -170,13 +175,23 @@
       height: 100%; }
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
-        overflow: hidden; }
+        overflow-y: hidden;
+        -ms-overflow-y: hidden;
+        overflow-x: scroll;
+        -ms-overflow-x: scroll; }
       .featured-banner .inner #carousel-container #carousel-ul {
-        left: -768px; }
+        left: 0;
+        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
+        width: 25%;
         max-height: 243px;
-        overflow: hidden; }
+        overflow: hidden;
+        margin: 0px; }
+        .featured-banner .inner #carousel-container #carousel-ul li .item-inner {
+          margin: 0px 5px 0px 5px; }
+      .featured-banner .inner #carousel-container #carousel-ul li:first-child .item-inner {
+        margin: 0px 5px 0px 0px; }
       .featured-banner .inner #carousel-container #carousel-ul li img {
         max-width: 748px; }
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
@@ -194,13 +209,20 @@
       height: 100%; }
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
-        overflow: hidden; }
+        overflow-y: hidden;
+        -ms-overflow-y: hidden;
+        overflow-x: scroll;
+        -ms-overflow-x: scroll; }
       .featured-banner .inner #carousel-container #carousel-ul {
-        left: -768px; }
+        left: 0;
+        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
+        width: 25%;
         max-height: 243px;
         overflow: hidden; }
+        .featured-banner .inner #carousel-container #carousel-ul li .item-inner {
+          margin: 0px 5px 0px 5px; }
       .featured-banner .inner #carousel-container #carousel-ul li img {
         max-width: 748px; }
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
@@ -209,6 +231,9 @@
         width: 600px;
         text-align: center; } }
 @media all and (max-width: 600px) {
+  .oct_hero {
+    left: -15px; }
+
   .container {
     background-color: orange !important; }
 
@@ -221,11 +246,15 @@
       height: 100%; }
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
-        overflow: hidden; }
+        overflow-y: hidden;
+        -ms-overflow-y: hidden;
+        overflow-x: scroll; }
       .featured-banner .inner #carousel-container #carousel-ul {
-        left: -768px; }
+        left: 0;
+        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
+        width: 25%;
         max-height: 243px;
         overflow: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li img {
@@ -233,7 +262,7 @@
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
         left: 0px;
         max-width: 600px;
-        width: 600px;
+        width: 100%;
         text-align: center; } }
 
 /*# sourceMappingURL=brendan.css.map */

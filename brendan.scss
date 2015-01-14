@@ -1,6 +1,7 @@
 $picWidth: 1000px;
 $containerWidth: 1010px;
 $left: -1010px;
+$carousel-ulWidth: 500%; //(#pics +1) * 100
 .featured-banner .inner {
   padding:0;
   background: none!important;
@@ -26,7 +27,7 @@ $left: -1010px;
       list-style-type: none; /* removing the default styling for unordered list items */
       margin: 0px;
       padding: 0px;
-      width:9999px; /* important */
+      width:$carousel-ulWidth; /* important */
       /* non-important styling bellow */
       padding-bottom:10px;
     }
@@ -61,6 +62,7 @@ $left: -1010px;
       max-width: 325px;
       max-height: 225px;
       overflow: hidden;
+      padding: 5px;
       h1 {
         line-height: 60px;
         font-size: 6em;

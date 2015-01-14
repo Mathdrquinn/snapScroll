@@ -1,7 +1,13 @@
-$left: -768px;
+$left: 0;
+$carousel-ulWidth: 400%; //(#pics +1) * 100
+$carousel-itemWidth: 25%; // (#pics) / 100
 @media all and (max-width: 910px) {
   body {
     background-color: blue!important;
+  }
+  .oct_hero {
+    left: -5px;
+    padding-left: 0px;
   }
   .small-media-hide {
     display: none!important;
@@ -12,17 +18,32 @@ $left: -768px;
       height: 100%;
       #carousel-inner {
         height: 100%;
-        overflow: hidden;
+        overflow-y: hidden;
+        -ms-overflow-y: hidden;
+        overflow-x: scroll;
+        -ms-overflow-x: scroll;
       }
 
       #carousel-ul {
         left:$left;
+        width: $carousel-ulWidth
       }
 
       #carousel-ul li{
         max-width: 748px;
+        width: $carousel-itemWidth;
         max-height: 243px;
         overflow: hidden;
+        margin: 0px;
+        .item-inner {
+          margin: 0px 5px 0px 5px;
+        }
+
+      }
+      #carousel-ul li:first-child{
+        .item-inner {
+          margin: 0px 5px 0px 0px;
+        }
 
       }
 
