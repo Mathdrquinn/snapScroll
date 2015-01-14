@@ -302,7 +302,7 @@ $(document).ready(function(){
                     console.log('At End');
                 });
             }
-            else if (left % itemWidth < 30) {
+            else if (left % itemWidth < 20) {
                 console.log('do nothing')
                 return;
             }
@@ -341,7 +341,7 @@ $(document).ready(function(){
                 //});
                 console.log('at beginning')
             }
-            else if ((left + 40) % itemWidth < 30) {
+            else if ((left + 40) % itemWidth < 20) {
                 console.log('do nothing going backwards')
                 return;
             }
