@@ -97,8 +97,13 @@
       color: white;
       font-size: 30px;
       background-color: #0f5474; }
+      .featured-banner .inner #carousel-container #left-scroll img, .featured-banner .inner #carousel-container #right-scroll img {
+        height: 30px; }
     .featured-banner .inner #carousel-container #left-scroll {
       left: -15px; }
+      .featured-banner .inner #carousel-container #left-scroll img {
+        float: left;
+        margin-left: 5px; }
     .featured-banner .inner #carousel-container #left-scroll:after {
       content: "";
       position: absolute;
@@ -110,6 +115,9 @@
       border-width: 7px 0px 58px 20px; }
     .featured-banner .inner #carousel-container #right-scroll {
       right: -15px; }
+      .featured-banner .inner #carousel-container #right-scroll img {
+        float: right;
+        margin-right: 5px; }
     .featured-banner .inner #carousel-container #right-scroll:after {
       content: "";
       position: absolute;
@@ -156,11 +164,48 @@
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
         right: 10%; } }
 @media all and (max-width: 910px) {
-  .oct_hero {
-    left: -5px;
-    padding-left: 0px;
-    padding-right: 0px; }
+  .bounce {
+    color: blue;
+    visibility: visible;
+    animate: snapBounce 0.8s;
+    -webkit-animation: snapBounce 0.6s; }
 
+  @-webkit-keyframes snapBounce {
+    0% {
+      left: 0; }
+    12.5% {
+      left: -25px; }
+    25% {
+      left: -50px; }
+    37.5% {
+      left: -25px; }
+    50% {
+      left: 0; }
+    75% {
+      left: -30px; }
+    100% {
+      left: 0px; } }
+  @keyframes snapBounce {
+    0% {
+      left: 0; }
+    20% {
+      left: -30px; }
+    40% {
+      left: 0; }
+    55% {
+      left: -20px; }
+    70% {
+      left: 0px; }
+    80% {
+      left: -15px; }
+    85% {
+      left: 0px; }
+    90% {
+      left: -10px; }
+    95% {
+      left: 0px; }
+    100% {
+      left: 0px; } }
   .small-media-hide {
     display: none !important; }
 
@@ -223,9 +268,6 @@
         width: 600px;
         text-align: center; } }
 @media all and (max-width: 600px) {
-  .oct_hero {
-    left: -15px; }
-
   .small-media-hide {
     display: none !important; }
 

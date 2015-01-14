@@ -83,12 +83,15 @@ $(document).ready(function(){
             // Array of DOM elements to run .forEach in snapScroll
             tags.push($('#carousel-item-' + i));
         }
+
+        // Move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
+        $('#carousel-ul li:first').before($('#carousel-ul li:last'));
+        setTimeout(function () {
+            $('#carousel-ul').addClass('bounce');
+        }, 300);
     }
 
     populateCarousel(cards);
-
-//move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
-    $('#carousel-ul li:first').before($('#carousel-ul li:last'));
 
 /* Manual Slide Right
 //////////////////////////////////////////////////////////*/
@@ -220,7 +223,7 @@ $(document).ready(function(){
 
 //Calling function at time interval 6s
     var timerId = setInterval(function() {
-            if (viewPort < 910) {
+            if ($(window).width() < 910) {
                 clearInterval(timerId);
             }
             else {
@@ -263,12 +266,12 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////// */
 
     // Scroll Event
-    if (viewPort < 910) {
-        $('#carousel-inner').on('scroll', function () {
+    $('#carousel-inner').on('scroll', function () {
 
+        if($(window).width() < 910) {
             determineDirection($(this))
-        });
-    }
+        }
+    });
 
     function determineDirection ($target) {
 

@@ -110,9 +110,16 @@ $carousel-ulWidth: 500%; //(#pics +1) * 100
       color: white;
       font-size: 30px;
       background-color: lighten(#093347, 10%);
+      img {
+        height:30px;
+      }
     }
     #left-scroll {
       left:-15px;
+      img {
+        float: left;
+        margin-left:5px;
+      }
     }
     #left-scroll:after {
       content: "";
@@ -129,6 +136,10 @@ $carousel-ulWidth: 500%; //(#pics +1) * 100
     }
     #right-scroll {
       right:-15px;
+      img {
+        float: right;
+        margin-right: 5px;
+      }
     }
     #right-scroll:after {
       content: "";

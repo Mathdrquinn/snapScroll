@@ -2,10 +2,6 @@ $left: 0;
 $carousel-ulWidth: 400%; //(#pics +1) * 100
 $carousel-itemWidth: 25%; // (#pics) / 100
 @media all and (max-width: 600px) {
-  .oct_hero {
-    left: -15px;
-  }
-
 //  .container {
 //    background-color: orange!important;
 //  }
