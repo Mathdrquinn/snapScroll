@@ -65,9 +65,7 @@ $(document).ready(function(){
 
  /* Populates carousel with images
 //////////////////////////////////////////////////////////*/
-    var $carousel = $('.carousel-container');
     function populateCarousel (cards) {
-
         for (var i=0; i < cards.length; i++) {
 
             // Populates carousel-ul with li's
@@ -86,9 +84,11 @@ $(document).ready(function(){
 
         // Move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
         $('#carousel-ul li:first').before($('#carousel-ul li:last'));
+
+        // Key-frame animation adding bounce
         setTimeout(function () {
             $('#carousel-ul').addClass('bounce');
-        }, 300);
+        }, 500);
     }
 
     populateCarousel(cards);
@@ -120,12 +120,12 @@ $(document).ready(function(){
 
             // Get the first list item and put it after the last list item (that's how the infinite effects is made) '
             $('#carousel-ul li:last').after($('#carousel-ul li:first'));
-            console.log('in completion function')
+
             //and get the left indent to the default -210px
             $('#carousel-ul').css('left', startLeftIndent);
             var currentDot = x || $('.white-dot').data('place');
             var nextDot = y || parseInt($('.white-dot').data('place')) + 1 ;
-            console.log(nextDot)
+
             if (nextDot === cards.length) {
                 $('#dot-' + currentDot).removeClass('white-dot');
                 $('#dot-0').addClass('white-dot')
@@ -165,14 +165,14 @@ $(document).ready(function(){
 
             /* when sliding to left we are moving the last item before the first item */
             $('#carousel-ul li:first').before($('#carousel-ul li:last'));
-            console.log('in completion function')
+
             /* and again, when we make that change we are setting the left indent of our unordered list to the default -210px */
             $('#carousel-ul').css('left', startLeftIndent);
 
             // Move Dot
             var currentDot = x || $('.white-dot').data('place');
             var nextDot = y || parseInt($('.white-dot').data('place')) - 1 ;
-            console.log(nextDot)
+
             if (nextDot === -1) {
                 $('#dot-' + currentDot).removeClass('white-dot');
                 $('#dot-' + (cards.length - 1)).addClass('white-dot')
@@ -200,16 +200,16 @@ $(document).ready(function(){
         // Make the sliding effect using jquery's anumate function '
         $('#carousel-ul').animate({'left' : leftIndent},function(){
 
-            //get the first list item and put it after the last list item (that's how the infinite effects is made) '
+            // Get the first list item and put it after the last list item (that's how the infinite effects is made) '
             $('#carousel-ul li:last').after($('#carousel-ul li:first'));
-            console.log('in completion function')
-            //and get the left indent to the default -210px
+
+            // And get the left indent to the default
             $('#carousel-ul').css('left', startLeftIndent);
 
             // Move Dot
             var currentDot = $('.white-dot').data('place');
             var nextDot = parseInt($('.white-dot').data('place')) + 1 ;
-            console.log(nextDot)
+
             if (nextDot === cards.length) {
                 $('#dot-' + currentDot).removeClass('white-dot');
                 $('#dot-0').addClass('white-dot')
@@ -221,7 +221,7 @@ $(document).ready(function(){
         });
     };
 
-//Calling function at time interval 6s
+// Calling function at time interval 6s
     var timerId = setInterval(function() {
             if ($(window).width() < 910) {
                 clearInterval(timerId);
@@ -243,15 +243,15 @@ $(document).ready(function(){
     });
 
     function dotSlide (x, y, a, b) {
-        console.log(x + ', ' + y)
+
         if (x < y) {
-            console.log('move forward')
+
             // scroll right
             slideRight(x, y, 350)
             dotSlide(++x, y, a, b)
         }
         else if (x > y) {
-            console.log('move backward')
+
             // scroll left
             slideLeft(x, y, 350);
             dotSlide(--x, y, a, b);
@@ -278,11 +278,9 @@ $(document).ready(function(){
         var currentScrollLocation = $target.scrollLeft();
 
         if (lastScrollLocation <= currentScrollLocation ) {
-            console.log('left!')
             snapScrollLeft(currentScrollLocation);
         }
         else {
-            console.log('right')
             snapScrollRight(currentScrollLocation);
         }
 
@@ -290,8 +288,9 @@ $(document).ready(function(){
     } // End Determine Direction
 
     function snapScrollLeft (currentScrollLocation) {
+
         var left = currentScrollLocation;
-        console.log(left);
+
         tags.forEach(function(x, y) {
             var itemWidth = x.outerWidth();
             var adjustedIndex = y + 1;
@@ -302,34 +301,27 @@ $(document).ready(function(){
             if (left > itemWidth * (tags.length - 1)) {
                 $('#carousel-inner').animate({
                     scrollLeft: itemWidth * (tags.length - 1) }, 500, function () {
-                    console.log('At End');
                 });
             }
-            else if (left % itemWidth < 20) {
-                console.log('do nothing')
-                return;
-            }
+            else if (left % itemWidth < 20) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
                 $('#carousel-inner').off('scroll');
-                console.log('turn off!')
                 $('#carousel-inner').animate({
-                    scrollLeft: moveTo }, 500, function () {
-
-                    console.log('success!!');
-
-                    $('#carousel-inner').on('scroll', function(){
-
-                        determineDirection($(this))
+                    scrollLeft: moveTo },
+                    500,
+                    function () {
+                        $('#carousel-inner').on('scroll', function(){
+                            determineDirection($(this))
+                        });
                     });
-                });
             }
         });
     }
 
     function snapScrollRight (currentScrollLocaiton) {
-        console.log('he is going backwards')
+
         var left = currentScrollLocaiton;
-        console.log(left);
+
         tags.forEach(function(x, y) {
             var itemWidth = x.outerWidth();
             var adjustedIndex = y + 1;
@@ -337,36 +329,20 @@ $(document).ready(function(){
             var itemPositionRight = itemWidth * adjustedIndex;
             var moveTo = itemPositionLeft;
 
-            if (left === 0) {
-                //$('#carousel-inner').animate({
-                //    scrollLeft: itemWidth * (tags.length - 1) }, 500, function () {
-                //    console.log('At Beginning');
-                //});
-                console.log('at beginning')
-            }
-            else if ((left + 40) % itemWidth < 20) {
-                console.log('do nothing going backwards')
-                return;
-            }
+            if (left === 0 || (left + 20) % itemWidth < 20) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
                 $('#carousel-inner').off('scroll');
-                console.log('turn off!')
                 $('#carousel-inner').animate({
-                    scrollLeft: moveTo }, 500, function () {
-
-                    console.log('success!!');
-
-                    $('#carousel-inner').on('scroll', function(){
-
-                        determineDirection($(this))
+                    scrollLeft: moveTo },
+                    500,
+                    function () {
+                        $('#carousel-inner').on('scroll', function(){
+                            determineDirection($(this))
                     });
                 });
             }
         });
-
-
     }; // End snapScrollRight
-
 }); // End Doc Ready
 
 
