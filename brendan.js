@@ -393,6 +393,12 @@ $(document).ready(function(){
         console.log(dot);
         $('.dot').removeClass('white-dot');
         $('#dot-' + dot).addClass('white-dot');
+    })
+    $('.swiper-container').on('mouseup', function () {
+        var dot = mySwiper.activeSlide().data('dot');
+        console.log('mouseup!!!!');
+        $('.dot').removeClass('white-dot');
+        $('#dot-' + dot).addClass('white-dot');
 
 
     })
