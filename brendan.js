@@ -299,16 +299,17 @@ $(document).ready(function(){
             var moveTo = itemPositionRight;
 
             if (left > itemWidth * (tags.length - 1)) {
-                $('#carousel-inner').animate({
-                    scrollLeft: itemWidth * (tags.length - 1) }, 500, function () {
-                });
+                return;
+                //$('#carousel-inner').animate({
+                //    scrollLeft: itemWidth * (tags.length - 1) }, 500, function () {
+                //});
             }
             else if (left % itemWidth < 20) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
                     scrollLeft: moveTo },
-                    200,
+                    300,
                     function () {
 
                         // Temporarily remove scrolling ability from carousel
@@ -320,11 +321,11 @@ $(document).ready(function(){
                         $('#dot-' + adjustedIndex).addClass('white-dot');
 
                         setTimeout(function () {
-                            console.log('unhide stuff!')
-                            $('#carousel-inner').css('overflow-x', 'scroll');
                             $('#carousel-inner').on('scroll', function(){
                                 determineDirection($(this))
                             });  // End Listener
+                            console.log('unhide stuff!')
+                            $('#carousel-inner').css('overflow-x', 'scroll');
                         }, 300); // End Timeout
 
                     }); // End Animate
@@ -348,7 +349,7 @@ $(document).ready(function(){
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
                     scrollLeft: moveTo },
-                    200,
+                    300,
                     function () {
 
                         // Temporarily remove scrolling ability from carousel
@@ -360,11 +361,11 @@ $(document).ready(function(){
                         $('#dot-' + y).addClass('white-dot');
 
                         setTimeout(function () {
-                            console.log('unhide stuff!')
-                            $('#carousel-inner').css('overflow-x', 'scroll');
                             $('#carousel-inner').on('scroll', function(){
                                 determineDirection($(this))
                             });  // End Listener
+                            console.log('unhide stuff!')
+                            $('#carousel-inner').css('overflow-x', 'scroll');
                     }, 300); // End Timeout
                 });
             }
