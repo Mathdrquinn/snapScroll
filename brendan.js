@@ -391,6 +391,9 @@ $(document).ready(function(){
     $('.swiper-container').on('swipe', function () {
         var dot = mySwiper.activeSlide().data('dot');
         console.log(dot);
+        $('.dot').removeClass('white-dot');
+        $('#dot-' + dot).addClass('white-dot');
+
 
     })
 }); // End Doc Ready

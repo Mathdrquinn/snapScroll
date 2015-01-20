@@ -103,8 +103,8 @@
               <file leaf-file-name="brendan.js" pinned="false" current-in-tab="true">
                 <entry file="file://$PROJECT_DIR$/brendan.js">
                   <provider selected="true" editor-type-id="text-editor">
-                    <state vertical-scroll-proportion="0.6496815" vertical-offset="5574" max-vertical-offset="6075">
-                      <caret line="392" column="25" selection-start-line="392" selection-start-column="25" selection-end-line="392" selection-end-column="25" />
+                    <state vertical-scroll-proportion="0.6815287" vertical-offset="5619" max-vertical-offset="6120">
+                      <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
                       <folding />
                     </state>
                   </provider>
@@ -802,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/brendan.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6496815" vertical-offset="5574" max-vertical-offset="6075">
-          <caret line="392" column="25" selection-start-line="392" selection-start-column="25" selection-end-line="392" selection-end-column="25" />
+        <state vertical-scroll-proportion="0.6815287" vertical-offset="5619" max-vertical-offset="6120">
+          <caret line="396" column="0" selection-start-line="396" selection-start-column="0" selection-end-line="396" selection-end-column="0" />
           <folding />
         </state>
       </provider>
