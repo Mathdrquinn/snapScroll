@@ -15,7 +15,7 @@
       overflow: hidden;
       /* important (hide the items outside the div) */
       /* non-important styling bellow */
-      background: #fff;
+      background: transparent;
       height: 100%; }
     .featured-banner .inner #carousel-container #carousel-ul {
       position: relative;

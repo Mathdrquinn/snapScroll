@@ -42,11 +42,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="brendan.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="brendan.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/brendan.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-13.040816" vertical-offset="1461" max-vertical-offset="2865">
-                  <caret line="140" column="26" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="26" />
+                <state vertical-scroll-proportion="0.38050735" vertical-offset="0" max-vertical-offset="2865">
+                  <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
                   <folding />
                 </state>
               </provider>
@@ -62,10 +62,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="_tablet.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="_tablet.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/_tablet.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.11235955" vertical-offset="1065" max-vertical-offset="2505">
+                <state vertical-scroll-proportion="-48.125" vertical-offset="0" max-vertical-offset="2505">
                   <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
                   <folding />
                 </state>
@@ -140,11 +140,11 @@
         <option value="$PROJECT_DIR$/_Media.scss" />
         <option value="$PROJECT_DIR$/_mediumMobile.scss" />
         <option value="$PROJECT_DIR$/_smallMobile.scss" />
-        <option value="$PROJECT_DIR$/brendan.scss" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/_tablet.scss" />
         <option value="$PROJECT_DIR$/brendan.js" />
+        <option value="$PROJECT_DIR$/brendan.scss" />
       </list>
     </option>
   </component>
@@ -753,14 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/brendan.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.040816" vertical-offset="1461" max-vertical-offset="2865">
-          <caret line="140" column="26" selection-start-line="140" selection-start-column="26" selection-end-line="140" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../../../Email/practice/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825">
@@ -800,7 +792,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_tablet.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.11235955" vertical-offset="1065" max-vertical-offset="2505">
+        <state vertical-scroll-proportion="-48.125" vertical-offset="0" max-vertical-offset="2505">
           <caret line="77" column="18" selection-start-line="77" selection-start-column="18" selection-end-line="77" selection-end-column="18" />
           <folding />
         </state>
@@ -813,6 +805,14 @@
           <folding>
             <marker date="1421769774000" expanded="true" signature="2350:2396" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/brendan.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38050735" vertical-offset="0" max-vertical-offset="2865">
+          <caret line="19" column="33" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>

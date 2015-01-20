@@ -17,7 +17,7 @@ $carousel-ulWidth: 500%; //(#pics +1) * 100
       width:100%; /* important (this width = width of list item(including margin) * items shown */
       overflow: hidden;  /* important (hide the items outside the div) */
       /* non-important styling bellow */
-      background: #fff;
+      background: rgba(0, 0, 0, 0);
       height:100%;
     }
 
