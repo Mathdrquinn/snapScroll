@@ -160,6 +160,7 @@ $carousel-ulWidth: 500%; //(#pics +1) * 100
       position: absolute;
       width:100%;
       bottom:10px;
+      z-index:1000;
       #dot-inner {
         display: block;
         margin-left: auto;

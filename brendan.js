@@ -71,7 +71,7 @@ $(document).ready(function(){
         for (var i=0; i < cards.length; i++) {
 
             // Populates carousel-ul with li's
-            $('#carousel-ul').append('<li id=\'carousel-item-' + i + '\' style=\'background-color: ' + cards[i].bgColor + '\'><div class=\'item-inner\'>' + cards[i].content + '</div></li>');
+            $('#carousel-ul').append('<li id=\'carousel-item-' + i + '\' class=\'swiper-slide\' data-dot=\'' + i + '\' style=\'background-color: ' + cards[i].bgColor + '\'><div class=\'item-inner\'>' + cards[i].content + '</div></li>');
 
             // Setting Dots
             if (i === 0) {
@@ -84,8 +84,10 @@ $(document).ready(function(){
             tags.push($('#carousel-item-' + i));
         }
 
-        // Move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
-        $('#carousel-ul li:first').before($('#carousel-ul li:last'));
+        if (viewPort > 910) {
+            // Move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
+            $('#carousel-ul li:first').before($('#carousel-ul li:last'));
+        }
 
         // Key-frame animation adding bounce
         setTimeout(function () {
@@ -268,12 +270,12 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////// */
 
     // Scroll Event
-    $cInner.on('scroll', function () {
-
-        if($(window).width() < 910) {
-            determineDirection($(this))
-        }
-    });
+    //$cInner.on('scroll', function () {
+    //
+    //    if($(window).width() < 910) {
+    //        determineDirection($(this))
+    //    }
+    //});
 
     function determineDirection ($target) {
 
@@ -300,13 +302,13 @@ $(document).ready(function(){
             var itemPositionLeft = itemWidth * y;
             var itemPositionRight = itemWidth * adjustedIndex;
             
-            if (left - 5 > itemWidth * (tags.length - 1)) {
+            if (left - 10 > itemWidth * (tags.length - 1)) {
                 console.log('bad')
                 $cInner.animate({
-                    scrollLeft: itemWidth * (tags.length - 5) }, 200, function () {
+                    scrollLeft: itemWidth * (tags.length - 1) }, 200, function () {
                 });
             }
-            //else if (left % itemWidth < 5) {return;}
+            //else if (left % itemWidth < 10) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight) {
                 $cInner.off('scroll');
 
@@ -345,10 +347,10 @@ $(document).ready(function(){
             var itemPositionLeft = itemWidth * y;
             var itemPositionRight = itemWidth * adjustedIndex;
 
-            if (left + 20 > itemWidth * (tags.length - 1)) {
+            if (left + 10 > itemWidth * (tags.length - 1)) {
                 console.log('good')
             }
-            //else if (left === 0 || (left + 5) % itemWidth < 5) {return;}
+            //else if (left === 0 || (left + 10) % itemWidth < 10) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight) {
                 $cInner.off('scroll');
 
@@ -376,6 +378,21 @@ $(document).ready(function(){
             }
         });
     }; // End snapScrollRight
+
+    // Swipe.js
+    if(viewPort < 910) {
+        window.mySwiper = new Swiper('.swiper-container',{
+            mode:'horizontal',
+            loop: true,
+            loopAdditionalSlides: 1
+        });
+    }
+
+    $('.swiper-container').on('swipe', function () {
+        var dot = mySwiper.activeSlide().data('dot');
+        console.log(dot);
+
+    })
 }); // End Doc Ready
 
 
