@@ -308,22 +308,25 @@ $(document).ready(function(){
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
                     scrollLeft: moveTo },
-                    500,
+                    200,
                     function () {
+
+                        // Temporarily remove scrolling ability from carousel
                         console.log('hide stuff!')
                         $(this).css('overflow-x', 'hidden');
 
-                            setTimeout(function () {
-                                console.log('unhide stuff!')
-                                $('#carousel-inner').css('overflow-x', 'scroll');
-                                $('#carousel-inner').on('scroll', function(){
-                                    determineDirection($(this))
-                                });  // End Listener
-                            }, 500); // End Timeout
+                        // Slide Dots
+                        $('.dot').removeClass('white-dot')
+                        $('#dot-' + adjustedIndex).addClass('white-dot');
 
-                            //// Slide Dots
-                            //$('.dot').removeClass('white-dot')
-                            //$('#dot-' + adjustedIndex).addClass('white-dot');
+                        setTimeout(function () {
+                            console.log('unhide stuff!')
+                            $('#carousel-inner').css('overflow-x', 'scroll');
+                            $('#carousel-inner').on('scroll', function(){
+                                determineDirection($(this))
+                            });  // End Listener
+                        }, 300); // End Timeout
+
                     }); // End Animate
             } // End Else if
         }); // End forEach
@@ -345,13 +348,16 @@ $(document).ready(function(){
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
                     scrollLeft: moveTo },
-                    500,
+                    200,
                     function () {
+
+                        // Temporarily remove scrolling ability from carousel
                         console.log('hide stuff!')
                         $(this).css('overflow-x', 'hidden');
-                        //// Slide Dots
-                        //$('.dot').removeClass('white-dot')
-                        //$('#dot-' + y).addClass('white-dot');
+
+                        // Slide Dots
+                        $('.dot').removeClass('white-dot')
+                        $('#dot-' + y).addClass('white-dot');
 
                         setTimeout(function () {
                             console.log('unhide stuff!')
@@ -359,7 +365,7 @@ $(document).ready(function(){
                             $('#carousel-inner').on('scroll', function(){
                                 determineDirection($(this))
                             });  // End Listener
-                    }, 500); // End Timeout
+                    }, 300); // End Timeout
                 });
             }
         });
