@@ -310,13 +310,24 @@ $(document).ready(function(){
                     scrollLeft: moveTo },
                     500,
                     function () {
-                        $('#carousel-inner').on('scroll', function(){
-                            determineDirection($(this))
-                        });
-                    });
-            }
-        });
-    }
+                        console.log('hide stuff!')
+                        $(this).css('overflow-x', 'hidden');
+
+                            setTimeout(function () {
+                                console.log('unhide stuff!')
+                                $('#carousel-inner').css('overflow-x', 'scroll');
+                                $('#carousel-inner').on('scroll', function(){
+                                    determineDirection($(this))
+                                });  // End Listener
+                            }, 500); // End Timeout
+
+                            //// Slide Dots
+                            //$('.dot').removeClass('white-dot')
+                            //$('#dot-' + adjustedIndex).addClass('white-dot');
+                    }); // End Animate
+            } // End Else if
+        }); // End forEach
+    } // End SnapScrollLeft
 
     function snapScrollRight (currentScrollLocaiton) {
 
@@ -336,9 +347,19 @@ $(document).ready(function(){
                     scrollLeft: moveTo },
                     500,
                     function () {
-                        $('#carousel-inner').on('scroll', function(){
-                            determineDirection($(this))
-                    });
+                        console.log('hide stuff!')
+                        $(this).css('overflow-x', 'hidden');
+                        //// Slide Dots
+                        //$('.dot').removeClass('white-dot')
+                        //$('#dot-' + y).addClass('white-dot');
+
+                        setTimeout(function () {
+                            console.log('unhide stuff!')
+                            $('#carousel-inner').css('overflow-x', 'scroll');
+                            $('#carousel-inner').on('scroll', function(){
+                                determineDirection($(this))
+                            });  // End Listener
+                    }, 500); // End Timeout
                 });
             }
         });
