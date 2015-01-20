@@ -2,6 +2,8 @@ var timer = 6000;
 var lastScrollLocation = 0;
 var cards = [];
 var tags = [];
+var $cInner = $('#carousel-inner');
+
 viewPort = $(window).width();
 function Card(pic, altText, bgColor, html) {
     this.pic = pic;
@@ -266,7 +268,7 @@ $(document).ready(function(){
 ////////////////////////////////////////////////////////// */
 
     // Scroll Event
-    $('#carousel-inner').on('scroll', function () {
+    $cInner.on('scroll', function () {
 
         if($(window).width() < 910) {
             determineDirection($(this))
@@ -288,6 +290,7 @@ $(document).ready(function(){
     } // End Determine Direction
 
     function snapScrollLeft (currentScrollLocation) {
+        console.log('scroll left -----------------')
 
         var left = currentScrollLocation;
 
@@ -296,35 +299,35 @@ $(document).ready(function(){
             var adjustedIndex = y + 1;
             var itemPositionLeft = itemWidth * y;
             var itemPositionRight = itemWidth * adjustedIndex;
-
-            if (left - 10 > itemWidth * (tags.length - 1)) {
+            
+            if (left - 5 > itemWidth * (tags.length - 1)) {
                 console.log('bad')
-                $('#carousel-inner').animate({
-                    scrollLeft: itemWidth * (tags.length - 1) }, 200, function () {
+                $cInner.animate({
+                    scrollLeft: itemWidth * (tags.length - 5) }, 200, function () {
                 });
             }
-            else if (left % itemWidth < 10) {return;}
-            else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
-                $('#carousel-inner').off('scroll');
-                $('#carousel-inner').animate({
+            //else if (left % itemWidth < 5) {return;}
+            else if (left > itemPositionLeft && left < itemPositionRight) {
+                $cInner.off('scroll');
+
+                // Temporarily remove scrolling ability from carousel
+                console.log('hide stuff!')
+                $cInner.css('overflow-x', 'hidden');
+
+                $cInner.animate({
                     scrollLeft: itemPositionRight },
                     300,
                     function () {
-
-                        // Temporarily remove scrolling ability from carousel
-                        console.log('hide stuff!')
-                        $(this).css('overflow-x', 'hidden');
-
                         // Slide Dots
                         $('.dot').removeClass('white-dot')
                         $('#dot-' + adjustedIndex).addClass('white-dot');
 
                         setTimeout(function () {
-                            $('#carousel-inner').on('scroll', function(){
+                            $cInner.on('scroll', function(){
                                 determineDirection($(this))
                             });  // End Listener
                             console.log('unhide stuff!')
-                            $('#carousel-inner').css('overflow-x', 'scroll');
+                            $cInner.css('overflow-x', 'scroll');
                         }, 300); // End Timeout
 
                     }); // End Animate
@@ -333,7 +336,7 @@ $(document).ready(function(){
     } // End SnapScrollLeft
 
     function snapScrollRight (currentScrollLocation) {
-
+        console.log('scroll right ----------------------')
         var left = currentScrollLocation;
 
         tags.forEach(function(x, y) {
@@ -345,28 +348,29 @@ $(document).ready(function(){
             if (left + 20 > itemWidth * (tags.length - 1)) {
                 console.log('good')
             }
-            else if (left === 0 || (left + 10) % itemWidth < 10) {return;}
-            else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
-                $('#carousel-inner').off('scroll');
-                $('#carousel-inner').animate({
+            //else if (left === 0 || (left + 5) % itemWidth < 5) {return;}
+            else if (left > itemPositionLeft && left < itemPositionRight) {
+                $cInner.off('scroll');
+
+                // Temporarily remove scrolling ability from carousel
+                console.log('hide stuff!')
+                $cInner.css('overflow-x', 'hidden');
+
+                $cInner.animate({
                     scrollLeft: itemPositionLeft },
                     300,
                     function () {
-
-                        // Temporarily remove scrolling ability from carousel
-                        console.log('hide stuff!')
-                        $(this).css('overflow-x', 'hidden');
 
                         // Slide Dots
                         $('.dot').removeClass('white-dot')
                         $('#dot-' + y).addClass('white-dot');
 
                         setTimeout(function () {
-                            $('#carousel-inner').on('scroll', function(){
+                            $cInner.on('scroll', function(){
                                 determineDirection($(this))
                             });  // End Listener
                             console.log('unhide stuff!')
-                            $('#carousel-inner').css('overflow-x', 'scroll');
+                            $cInner.css('overflow-x', 'scroll');
                     }, 300); // End Timeout
                 });
             }
