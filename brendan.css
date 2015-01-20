@@ -214,6 +214,7 @@
     .featured-banner .inner #carousel-container {
       height: 100%; }
       .featured-banner .inner #carousel-container #carousel-inner {
+        width: 105%;
         height: 100%;
         overflow-y: hidden;
         -ms-overflow-y: hidden;

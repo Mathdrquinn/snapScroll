@@ -296,19 +296,18 @@ $(document).ready(function(){
             var adjustedIndex = y + 1;
             var itemPositionLeft = itemWidth * y;
             var itemPositionRight = itemWidth * adjustedIndex;
-            var moveTo = itemPositionRight;
 
-            if (left > itemWidth * (tags.length - 1)) {
-                return;
-                //$('#carousel-inner').animate({
-                //    scrollLeft: itemWidth * (tags.length - 1) }, 500, function () {
-                //});
+            if (left - 10 > itemWidth * (tags.length - 1)) {
+                console.log('bad')
+                $('#carousel-inner').animate({
+                    scrollLeft: itemWidth * (tags.length - 1) }, 200, function () {
+                });
             }
-            else if (left % itemWidth < 20) {return;}
+            else if (left % itemWidth < 10) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
-                    scrollLeft: moveTo },
+                    scrollLeft: itemPositionRight },
                     300,
                     function () {
 
@@ -333,22 +332,24 @@ $(document).ready(function(){
         }); // End forEach
     } // End SnapScrollLeft
 
-    function snapScrollRight (currentScrollLocaiton) {
+    function snapScrollRight (currentScrollLocation) {
 
-        var left = currentScrollLocaiton;
+        var left = currentScrollLocation;
 
         tags.forEach(function(x, y) {
             var itemWidth = x.outerWidth();
             var adjustedIndex = y + 1;
             var itemPositionLeft = itemWidth * y;
             var itemPositionRight = itemWidth * adjustedIndex;
-            var moveTo = itemPositionLeft;
 
-            if (left === 0 || (left + 20) % itemWidth < 20) {return;}
+            if (left + 20 > itemWidth * (tags.length - 1)) {
+                console.log('good')
+            }
+            else if (left === 0 || (left + 10) % itemWidth < 10) {return;}
             else if (left > itemPositionLeft && left < itemPositionRight && left % 10 === 0) {
                 $('#carousel-inner').off('scroll');
                 $('#carousel-inner').animate({
-                    scrollLeft: moveTo },
+                    scrollLeft: itemPositionLeft },
                     300,
                     function () {
 
