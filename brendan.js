@@ -73,20 +73,15 @@ $(document).ready(function(){
             // Populates carousel-ul with li's
             $('#carousel-ul').append('<li id=\'carousel-item-' + i + '\' class=\'swiper-slide\' data-dot=\'' + i + '\' style=\'background-color: ' + cards[i].bgColor + '\'><div class=\'item-inner\'>' + cards[i].content + '</div></li>');
 
-            // Setting Dots
-            if (i === 0) {
-                $('#dot-inner').append('<div id=\'dot-' + i + '\' class=\'dot white-dot\' data-place=\'' + i + '\'></div>');
-            }
-            else {
-                $('#dot-inner').append('<div id=\'dot-' + i + '\' class=\'dot\' data-place=\'' + i + '\'></div>');
-            }
+            //// Setting Dots
+            //if (i === 0) {
+            //    $('#dot-inner').append('<div id=\'dot-' + i + '\' class=\'dot white-dot\' data-place=\'' + i + '\'></div>');
+            //}
+            //else {
+            //    $('#dot-inner').append('<div id=\'dot-' + i + '\' class=\'dot\' data-place=\'' + i + '\'></div>');
+            //}
             // Array of DOM elements to run .forEach in snapScroll
             tags.push($('#carousel-item-' + i));
-        }
-
-        if (viewPort > 910) {
-            // Move the last list item before the first item. The purpose of this is if the user clicks previous he will be able to see the last item.
-            $('#carousel-ul li:first').before($('#carousel-ul li:last'));
         }
 
         // Key-frame animation adding bounce
@@ -99,12 +94,15 @@ $(document).ready(function(){
 
 /* Manual Slide Right
 //////////////////////////////////////////////////////////*/
-    $('#right-scroll').click(function(){
+    $('#right-scroll').click(function(e){
 
-        var currentDot = $('.white-dot').data('place');
-        var nextDot = parseInt($('.white-dot').data('place')) + 1 ;
+        e.preventDefault();
+        mySwiper.swipeNext();
 
-        slideRight(currentDot, nextDot, 500);
+        //var currentDot = $('.swiper-active-switch').index() + 1;
+        //var nextDot = currentDot + 1 ;
+        //
+        //slideRight(currentDot, nextDot, 500);
     });
 
     function slideRight(x, y, time) {
@@ -127,28 +125,31 @@ $(document).ready(function(){
 
             //and get the left indent to the default -210px
             $('#carousel-ul').css('left', startLeftIndent);
-            var currentDot = x || $('.white-dot').data('place');
-            var nextDot = y || parseInt($('.white-dot').data('place')) + 1 ;
+            var currentDot = x;
+            var nextDot = y;
 
-            if (nextDot === cards.length) {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-0').addClass('white-dot')
+            if (nextDot === cards.length + 1) {
+                $('.swiper-pagination-switch').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(1)').addClass('swiper-visible-switch swiper-active-switch')
             }
             else {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-' + nextDot).addClass('white-dot')
+                $('.swiper-pagination-switch:nth-child(' + currentDot + ')').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(' + nextDot + ')').addClass('swiper-visible-switch swiper-active-switch')
             }
         });
     }
 
 /* Manual Slide Left
 //////////////////////////////////////////////////////////*/
-    $('#left-scroll').click(function(){
+    $('#left-scroll').click(function(e){
 
-        var currentDot = $('.white-dot').data('place');
-        var nextDot = parseInt($('.white-dot').data('place')) - 1 ;
+        e.preventDefault();
+        mySwiper.swipePrev();
 
-        slideLeft(currentDot, nextDot, 500);
+        //var currentDot = $('.swiper-active-switch').index() + 1;
+        //var nextDot = currentDot - 1 ;
+        //
+        //slideLeft(currentDot, nextDot, 500);
 
     });
 
@@ -174,16 +175,16 @@ $(document).ready(function(){
             $('#carousel-ul').css('left', startLeftIndent);
 
             // Move Dot
-            var currentDot = x || $('.white-dot').data('place');
-            var nextDot = y || parseInt($('.white-dot').data('place')) - 1 ;
+            var currentDot = x;
+            var nextDot = y;
 
-            if (nextDot === -1) {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-' + (cards.length - 1)).addClass('white-dot')
+            if (nextDot === 0) {
+                $('.swiper-pagination-switch').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(' + cards.length + ')').addClass('swiper-visible-switch swiper-active-switch')
             }
             else {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-' + nextDot).addClass('white-dot')
+                $('.swiper-pagination-switch:nth-child(' + currentDot + ')').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(' + nextDot + ')').addClass('swiper-visible-switch swiper-active-switch')
             }
         });
     }
@@ -211,23 +212,23 @@ $(document).ready(function(){
             $('#carousel-ul').css('left', startLeftIndent);
 
             // Move Dot
-            var currentDot = $('.white-dot').data('place');
-            var nextDot = parseInt($('.white-dot').data('place')) + 1 ;
+            var currentDot = $('.swiper-active-switch').index() + 1;
+            var nextDot = currentDot + 1 ;
 
-            if (nextDot === cards.length) {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-0').addClass('white-dot')
+            if (nextDot === cards.length + 1) {
+                $('.swiper-pagination-switch').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(1)').addClass('swiper-visible-switch swiper-active-switch')
             }
             else {
-                $('#dot-' + currentDot).removeClass('white-dot');
-                $('#dot-' + nextDot).addClass('white-dot')
+                $('.swiper-pagination-switch:nth-child(' + currentDot + ')').removeClass('swiper-visible-switch swiper-active-switch');
+                $('.swiper-pagination-switch:nth-child(' + nextDot + ')').addClass('swiper-visible-switch swiper-active-switch')
             }
         });
     };
 
 // Calling function at time interval 6s
     var timerId = setInterval(function() {
-            if ($(window).width() < 910) {
+            if ($(window).width() <= 910) {
                 clearInterval(timerId);
             }
             else {
@@ -239,8 +240,8 @@ $(document).ready(function(){
 
 /* Slide to specific Image
 ////////////////////////////////////////////////////////*/
-    $('.dot').on('click', function () {
-        var currentDot = parseInt($('.white-dot').data('place'));
+    $('.swiper-pagination-switch').on('click', function () {
+        var currentDot = parseInt($('.swiper-active-switch').data('place'));
         var selectedDot = parseInt($(this).data('place'));
 
         dotSlide(currentDot, selectedDot, currentDot, selectedDot);
@@ -269,136 +270,51 @@ $(document).ready(function(){
 /* Snap scroll Event
 ////////////////////////////////////////////////////////// */
 
-    // Scroll Event
-    //$cInner.on('scroll', function () {
-    //
-    //    if($(window).width() < 910) {
-    //        determineDirection($(this))
-    //    }
-    //});
+    $(window).resize(function () {
+        oldViewPort = viewPort;
+        viewPort = $(this).width();
+        console.log('oldView: ' + oldViewPort + ', viewPort: ' + viewPort);
 
-    function determineDirection ($target) {
+        if(viewPort <= 910 && oldViewPort > 910) {
+            console.log('create swiper')
 
-        var currentScrollLocation = $target.scrollLeft();
-
-        if (lastScrollLocation <= currentScrollLocation ) {
-            snapScrollLeft(currentScrollLocation);
+            //end auto play
+            if (viewPort < 910) {
+                console.log('kill autoplay!!!!!!!!!!!!')
+                clearInterval(timerId);
+            }
+        }
+        else if(viewPort > 910 && oldViewPort <= 910 ) {
+            console.log('swiper is removed')
+            if ($(window).width() < 910) {
+            }
         }
         else {
-            snapScrollRight(currentScrollLocation);
+            console.log('should not be here')
         }
 
-        lastScrollLocation = currentScrollLocation;
-    } // End Determine Direction
-
-    function snapScrollLeft (currentScrollLocation) {
-        console.log('scroll left -----------------')
-
-        var left = currentScrollLocation;
-
-        tags.forEach(function(x, y) {
-            var itemWidth = x.outerWidth();
-            var adjustedIndex = y + 1;
-            var itemPositionLeft = itemWidth * y;
-            var itemPositionRight = itemWidth * adjustedIndex;
-            
-            if (left - 10 > itemWidth * (tags.length - 1)) {
-                console.log('bad')
-                $cInner.animate({
-                    scrollLeft: itemWidth * (tags.length - 1) }, 200, function () {
-                });
-            }
-            //else if (left % itemWidth < 10) {return;}
-            else if (left > itemPositionLeft && left < itemPositionRight) {
-                $cInner.off('scroll');
-
-                // Temporarily remove scrolling ability from carousel
-                console.log('hide stuff!')
-                $cInner.css('overflow-x', 'hidden');
-
-                $cInner.animate({
-                    scrollLeft: itemPositionRight },
-                    300,
-                    function () {
-                        // Slide Dots
-                        $('.dot').removeClass('white-dot')
-                        $('#dot-' + adjustedIndex).addClass('white-dot');
-
-                        setTimeout(function () {
-                            $cInner.on('scroll', function(){
-                                determineDirection($(this))
-                            });  // End Listener
-                            console.log('unhide stuff!')
-                            $cInner.css('overflow-x', 'scroll');
-                        }, 300); // End Timeout
-
-                    }); // End Animate
-            } // End Else if
-        }); // End forEach
-    } // End SnapScrollLeft
-
-    function snapScrollRight (currentScrollLocation) {
-        console.log('scroll right ----------------------')
-        var left = currentScrollLocation;
-
-        tags.forEach(function(x, y) {
-            var itemWidth = x.outerWidth();
-            var adjustedIndex = y + 1;
-            var itemPositionLeft = itemWidth * y;
-            var itemPositionRight = itemWidth * adjustedIndex;
-
-            if (left + 10 > itemWidth * (tags.length - 1)) {
-                console.log('good')
-            }
-            //else if (left === 0 || (left + 10) % itemWidth < 10) {return;}
-            else if (left > itemPositionLeft && left < itemPositionRight) {
-                $cInner.off('scroll');
-
-                // Temporarily remove scrolling ability from carousel
-                console.log('hide stuff!')
-                $cInner.css('overflow-x', 'hidden');
-
-                $cInner.animate({
-                    scrollLeft: itemPositionLeft },
-                    300,
-                    function () {
-
-                        // Slide Dots
-                        $('.dot').removeClass('white-dot')
-                        $('#dot-' + y).addClass('white-dot');
-
-                        setTimeout(function () {
-                            $cInner.on('scroll', function(){
-                                determineDirection($(this))
-                            });  // End Listener
-                            console.log('unhide stuff!')
-                            $cInner.css('overflow-x', 'scroll');
-                    }, 300); // End Timeout
-                });
-            }
-        });
-    }; // End snapScrollRight
+    });
 
     // Swipe.js
-    if(viewPort < 910) {
-        window.mySwiper = new Swiper('.swiper-container',{
-            mode:'horizontal',
-            loop: true,
-            loopAdditionalSlides: 1
-        });
-    }
+    var mySwiper = new Swiper('.swiper-container',{
+        mode:'horizontal',
+        loop: true,
+        pagination: '#dot-inner',
+        paginationClickable: true,
+        keyboardControl: true
+    });
 
     $('.swiper-container').on('swipe', function () {
         var dot = mySwiper.activeSlide().data('dot');
         console.log(dot);
-        $('.dot').removeClass('white-dot');
-        $('#dot-' + dot).addClass('white-dot');
+        $('.dot').removeClass('swiper-active-switch');
+        $('#dot-' + dot).addClass('swiper-active-switch');
     })
     $('.swiper-container').on('mouseup', function () {
         var dot = mySwiper.activeSlide().data('dot');
         console.log('mouseup!!!!');
-        $('.dot').removeClass('white-dot');
-        $('#dot-' + dot).addClass('white-dot');
+        $('.dot').removeClass('swiper-active-switch');
+        $('#dot-' + dot).addClass('swiper-active-switch');
 
 
     })

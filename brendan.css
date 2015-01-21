@@ -25,8 +25,6 @@
       /* removing the default styling for unordered list items */
       margin: 0px;
       padding: 0px;
-      width: 500%;
-      /* important */
       /* non-important styling bellow */
       padding-bottom: 10px; }
     .featured-banner .inner #carousel-container #carousel-ul li {
@@ -37,15 +35,12 @@
       /* just styling bellow*/
       position: relative;
       height: 330px;
-      padding: 0px;
       background: #fff;
-      margin-top: 0px;
-      margin-bottom: 0px;
-      margin-left: 5px;
-      margin-right: 5px; }
+      margin: 0; }
     .featured-banner .inner #carousel-container #carousel-ul li img[class^="carousel-image-"] {
       /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
       /* styling */
+      width: 990px;
       cursor: pointer;
       cursor: hand;
       border: 0px; }
@@ -137,7 +132,7 @@
       .featured-banner .inner #carousel-container #dot-container #dot-inner {
         display: block;
         margin-left: auto; }
-        .featured-banner .inner #carousel-container #dot-container #dot-inner .dot {
+        .featured-banner .inner #carousel-container #dot-container #dot-inner .swiper-pagination-switch {
           display: inline-block;
           width: 10px;
           height: 10px;
@@ -145,7 +140,7 @@
           margin: 10px 15px 10px 15px;
           border: 2px solid white;
           border-radius: 100%; }
-        .featured-banner .inner #carousel-container #dot-container #dot-inner .white-dot {
+        .featured-banner .inner #carousel-container #dot-container #dot-inner .swiper-active-switch {
           background-color: white; }
 
 @media all and (max-width: 1020px) {
@@ -160,7 +155,7 @@
         left: -910px; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 890px;
-        max-height: 289px;
+        max-height: 330px;
         overflow: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
         right: 10%; } }
