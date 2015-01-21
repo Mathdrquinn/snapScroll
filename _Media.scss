@@ -1,8 +1,4 @@
-$left: -910px;
 @media all and (max-width: 1020px) {
-//  body {
-//    background-color: green!important;
-//  }
   .featured-banner .inner {
     max-height: 289px;
     #carousel-container {
@@ -13,7 +9,6 @@ $left: -910px;
       }
 
       #carousel-ul {
-        left:$left;
       }
 
       #carousel-ul li{

@@ -1,39 +1,34 @@
-$picWidth: 990px;
+$picWidth: 1000px;
 $liWidth: 1000px;
-$left: -1010px;
+.bcFloat {
+  top: 240px!important;
+}
 .featured-banner .inner {
   padding:0;
   background: none!important;
-/* Thanks to http://web.enavu.com/tutorials/making-an-infinite-jquery-carousel
-  for the help with the carousel */
 //////////////////////////////////////////////////////////////////////////////
   #carousel-container {
     width: 100%;
     position: relative;
     height: 330px;
     #carousel-inner {
-      float:left; /* important for inline positioning */
-      width:100%; /* important (this width = width of list item(including margin) * items shown */
-      overflow: hidden;  /* important (hide the items outside the div) */
-      /* non-important styling bellow */
+      width:100%;
+      overflow: hidden;
       background: rgba(0, 0, 0, 0);
       height:100%;
     }
 
     #carousel-ul {
       position:relative;
-      left:$left; /* important (this should be negative number of list items width(including margin) */
-      list-style-type: none; /* removing the default styling for unordered list items */
+      list-style-type: none;
       margin: 0px;
       padding: 0px;
-      /* non-important styling bellow */
       padding-bottom:10px;
     }
 
     #carousel-ul li{
-      float: left; /* important for inline positioning of the list items */
-      width:$liWidth;  /* fixed width, important */
-      /* just styling bellow*/
+      float: left;
+      width:$liWidth;
       position: relative;
       height:330px;
       background: #fff;
@@ -41,11 +36,7 @@ $left: -1010px;
     }
 
     #carousel-ul li img[class^="carousel-image-"] {
-      ; /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
-      /* styling */
       width: $picWidth;
-      cursor:pointer;
-      cursor: hand;
       border:0px;
     }
 
@@ -105,6 +96,7 @@ $left: -1010px;
       color: white;
       font-size: 30px;
       background-color: lighten(#093347, 10%);
+      z-index: 3141592;
       img {
         height:30px;
       }
@@ -161,6 +153,7 @@ $left: -1010px;
         margin-left: auto;
         .swiper-pagination-switch {
           display: inline-block;
+          cursor: pointer;
           width: 10px;
           height: 10px;
           background-color: none;

@@ -1,10 +1,4 @@
-$left: 0;
-$carousel-ulWidth: 400%; //(#pics +1) * 100
-$carousel-itemWidth: 25%; // (#pics) / 100
 @media all and (max-width: 768px) {
-//  .container {
-//    background-color: purple!important;
-//  }
   .small-media-hide {
     display: none!important;
   }
@@ -21,13 +15,10 @@ $carousel-itemWidth: 25%; // (#pics) / 100
       }
 
       #carousel-ul {
-        left:$left;
-        width: $carousel-ulWidth;
       }
 
       #carousel-ul li{
         max-width: 748px;
-        width: $carousel-itemWidth;
         max-height: 243px;
         overflow: hidden;
         .item-inner {

@@ -1,10 +1,4 @@
-$left: 0;
-$carousel-ulWidth: 400%; //(#pics +1) * 100
-$carousel-itemWidth: 25%; // (#pics) / 100
 @media all and (max-width: 910px) {
-//  body {
-//    background-color: blue!important;
-//  }
   .bounce {
     color:blue;
     visibility: visible;
@@ -84,13 +78,10 @@ $carousel-itemWidth: 25%; // (#pics) / 100
       }
 
       #carousel-ul {
-        left:$left;
-        width: $carousel-ulWidth
       }
 
       #carousel-ul li{
         max-width: 748px;
-        width: $carousel-itemWidth;
         max-height: 243px;
         overflow: hidden;
         margin: 0px;

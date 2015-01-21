@@ -1,48 +1,33 @@
+.bcFloat {
+  top: 240px !important; }
+
 .featured-banner .inner {
   padding: 0;
-  background: none !important;
-  /* Thanks to http://web.enavu.com/tutorials/making-an-infinite-jquery-carousel
-    for the help with the carousel */ }
+  background: none !important; }
   .featured-banner .inner #carousel-container {
     width: 100%;
     position: relative;
     height: 330px; }
     .featured-banner .inner #carousel-container #carousel-inner {
-      float: left;
-      /* important for inline positioning */
       width: 100%;
-      /* important (this width = width of list item(including margin) * items shown */
       overflow: hidden;
-      /* important (hide the items outside the div) */
-      /* non-important styling bellow */
       background: transparent;
       height: 100%; }
     .featured-banner .inner #carousel-container #carousel-ul {
       position: relative;
-      left: -1010px;
-      /* important (this should be negative number of list items width(including margin) */
       list-style-type: none;
-      /* removing the default styling for unordered list items */
       margin: 0px;
       padding: 0px;
-      /* non-important styling bellow */
       padding-bottom: 10px; }
     .featured-banner .inner #carousel-container #carousel-ul li {
       float: left;
-      /* important for inline positioning of the list items */
       width: 1000px;
-      /* fixed width, important */
-      /* just styling bellow*/
       position: relative;
       height: 330px;
       background: #fff;
       margin: 0; }
     .featured-banner .inner #carousel-container #carousel-ul li img[class^="carousel-image-"] {
-      /* IE is making a 4px gap bellow an image inside of an anchor (<a href...>) so this is to fix that*/
-      /* styling */
-      width: 990px;
-      cursor: pointer;
-      cursor: hand;
+      width: 1000px;
       border: 0px; }
     .featured-banner .inner #carousel-container #carousel-ul li div[class^="carousel-content-"] {
       position: absolute;
@@ -91,7 +76,8 @@
       cursor: hand;
       color: white;
       font-size: 30px;
-      background-color: #0f5474; }
+      background-color: #0f5474;
+      z-index: 3141592; }
       .featured-banner .inner #carousel-container #left-scroll img, .featured-banner .inner #carousel-container #right-scroll img {
         height: 30px; }
     .featured-banner .inner #carousel-container #left-scroll {
@@ -134,6 +120,7 @@
         margin-left: auto; }
         .featured-banner .inner #carousel-container #dot-container #dot-inner .swiper-pagination-switch {
           display: inline-block;
+          cursor: pointer;
           width: 10px;
           height: 10px;
           background-color: none;
@@ -151,8 +138,6 @@
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
         overflow: hidden; }
-      .featured-banner .inner #carousel-container #carousel-ul {
-        left: -910px; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 890px;
         max-height: 330px;
@@ -216,12 +201,8 @@
         -ms-overflow-y: hidden;
         overflow-x: scroll;
         -ms-overflow-x: scroll; }
-      .featured-banner .inner #carousel-container #carousel-ul {
-        left: 0;
-        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
-        width: 25%;
         max-height: 243px;
         overflow: hidden;
         margin: 0px; }
@@ -247,12 +228,8 @@
         -ms-overflow-y: hidden;
         overflow-x: scroll;
         -ms-overflow-x: scroll; }
-      .featured-banner .inner #carousel-container #carousel-ul {
-        left: 0;
-        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
-        width: 25%;
         max-height: 243px;
         overflow: hidden; }
         .featured-banner .inner #carousel-container #carousel-ul li .item-inner {
@@ -277,12 +254,8 @@
         overflow-y: hidden;
         -ms-overflow-y: hidden;
         overflow-x: scroll; }
-      .featured-banner .inner #carousel-container #carousel-ul {
-        left: 0;
-        width: 400%; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
-        width: 25%;
         max-height: 243px;
         overflow: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li img {
