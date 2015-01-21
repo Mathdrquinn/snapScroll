@@ -199,8 +199,8 @@
         height: 100%;
         overflow-y: hidden;
         -ms-overflow-y: hidden;
-        overflow-x: scroll;
-        -ms-overflow-x: scroll; }
+        overflow-x: hidden;
+        -ms-overflow-x: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
         max-height: 243px;
@@ -225,9 +225,7 @@
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
         overflow-y: hidden;
-        -ms-overflow-y: hidden;
-        overflow-x: scroll;
-        -ms-overflow-x: scroll; }
+        -ms-overflow-y: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
         max-height: 243px;
@@ -252,8 +250,7 @@
       .featured-banner .inner #carousel-container #carousel-inner {
         height: 100%;
         overflow-y: hidden;
-        -ms-overflow-y: hidden;
-        overflow-x: scroll; }
+        -ms-overflow-y: hidden; }
       .featured-banner .inner #carousel-container #carousel-ul li {
         max-width: 748px;
         max-height: 243px;
