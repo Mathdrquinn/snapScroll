@@ -19,7 +19,7 @@ cards = [
             '<div class=\'carousel-content-0\'>',
             '<h1 class=\'carousel-item-header\'>Hello 1</h1>',
             '<h3 class=\'carousel-item-subheader\'>Subtitle</h3>',
-            '<button><a href="Peralta_blueion">Men\'s Glasses ›</a></button>',
+            '<button><a href=\'http://www.google.com\'>Men\'s Glasses ›</a></button>',
             '</div>'
         ].join('')
     ),
@@ -30,7 +30,7 @@ cards = [
             '<div class=\'carousel-content-1\'>',
             '<h1 class=\'carousel-item-header\'>Hello 1</h1>',
             '<h3 class=\'carousel-item-subheader\'>Subtitle</h3>',
-            '<button><a href="Peralta_blueion">Men\'s Glasses ›</a></button>',
+            '<button><a href=\'http://www.google.com\'>Men\'s Glasses ›</a></button>',
             '</div>'
         ].join('')
     ),
@@ -41,22 +41,10 @@ cards = [
             '<div class=\'carousel-content-2\'>',
             '<h1 class=\'carousel-item-header\'>Hello 1</h1>',
             '<h3 class=\'carousel-item-subheader\'>Subtitle</h3>',
-            '<button><a href="Peralta_blueion">Men\'s Glasses ›</a></button>',
-            '</div>'
-        ].join('')
-    ),
-    new Card('http://placekitten.com/1000/329',
-        'Stephanie',
-        '#fff',
-        [
-            '<div class=\'carousel-content-3\'>',
-            '<h1 class=\'carousel-item-header\'>Hello 1</h1>',
-            '<h3 class=\'carousel-item-subheader\'>Subtitle</h3>',
-            '<button><a href="Peralta_blueion">Men\'s Glasses ›</a></button>',
+            '<button><a href=\'mathdrquinn.github.io/Peralta_blueion\'>Men\'s Glasses ›</a></button>',
             '</div>'
         ].join('')
     )
-
 ];
 
 $(document).ready(function(){
