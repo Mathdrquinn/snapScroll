@@ -78,6 +78,7 @@
       }
 
       #carousel-ul {
+
       }
 
       #carousel-ul li{
@@ -88,8 +89,20 @@
         .item-inner {
           margin: 0px 5px 0px 5px;
         }
-
       }
+
+      #carousel-ul  li {
+        .image-desktop {
+          display:none;
+        }
+        .image-tablet {
+          display:block;
+        }
+        .image-mobile {
+          display: none;
+        }
+      }
+
       #carousel-ul li:first-child{
         .item-inner {
           margin: 0px 5px 0px 0px;

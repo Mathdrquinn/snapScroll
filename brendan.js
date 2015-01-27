@@ -1,18 +1,24 @@
 var cards = [];
 
 viewPort = $(window).width();
-function Card(pic, altText, bgColor, html) {
-    this.pic = pic;
+function Card(desktopPic, tabletPic, mobilePic,  altText, bgColor, html) {
+    this.desktopPic = desktopPic;
+    this.tabletPic = tabletPic;
+    this.mobilePic = mobilePic;
     this.altText = altText;
     this.bgColor = bgColor;
     this.html = [
-        '<img class=\'carousel-image-' + cards.length + '\' src=\'' + this.pic + '\' alt=\'' + this.alt + '\'/>',
+        '<img class=\'image-desktop carousel-image-' + cards.length + '\' src=\'' +this.desktopPic + '\' alt=\'' + this.alt + '\'/>',
+        '<img class=\'image-tablet carousel-image-' + cards.length + '\' src=\'' + this.tabletPic + '\' alt=\'' + this.alt + '\'/>',
+        '<img class=\'image-mobile carousel-image-' + cards.length + '\' src=\'' + this.mobilePic + '\' alt=\'' + this.alt + '\'/>',
         html
     ];
     this.content = this.html.join('');
 }
 cards = [
     new Card('Banner1.jpg',
+        'http://placekitten.com/890/243',
+        'http://placekitten.com/600/243',
         'heyo',
         '#fff',
         [
@@ -24,6 +30,8 @@ cards = [
         ].join('')
     ),
     new Card('http://placekitten.com/1000/330',
+        'http://placekitten.com/890/243',
+        'http://placekitten.com/600/243',
         'Brandon',
         '#fff',
         [
@@ -35,6 +43,8 @@ cards = [
         ].join('')
     ),
     new Card('http://placekitten.com/1000/331',
+        'http://placekitten.com/890/243',
+        'http://placekitten.com/600/243',
         'Austin',
         '#fff',
         [
@@ -47,21 +57,25 @@ cards = [
     )
 ];
 
+// Populate first Carousel-item
+$('#carousel-ul').append('<li id=\'carousel-item-' + 0 + '\' class=\'swiper-slide\' data-dot=\'' + 0 + '\' style=\'background-color: ' + cards[0].bgColor + '\'><div class=\'item-inner\'>' + cards[0].content + '</div></li>');
+
+
 $(document).ready(function(){
 
  /* Populates carousel with images
 //////////////////////////////////////////////////////////*/
     function populateCarousel (cards) {
-        for (var i=0; i < cards.length; i++) {
+        for (var i=1; i < cards.length; i++) {
 
             // Populates carousel-ul with li's
             $('#carousel-ul').append('<li id=\'carousel-item-' + i + '\' class=\'swiper-slide\' data-dot=\'' + i + '\' style=\'background-color: ' + cards[i].bgColor + '\'><div class=\'item-inner\'>' + cards[i].content + '</div></li>');
         }
 
-        // Key-frame animation adding bounce
-        setTimeout(function () {
-            $('#carousel-ul').addClass('bounce');
-        }, 500);
+        //// Key-frame animation adding bounce
+        //setTimeout(function () {
+        //    $('#carousel-ul').addClass('bounce');
+        //}, 500);
     }
 
     populateCarousel(cards);

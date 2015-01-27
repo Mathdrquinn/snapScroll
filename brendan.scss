@@ -40,6 +40,21 @@ $liWidth: 1000px;
       border:0px;
     }
 
+    #carousel-ul  li {
+      .item-inner {
+        border-right: 5px solid white;
+      }
+      .image-desktop {
+        display:block;
+      }
+      .image-tablet {
+        display:none;
+      }
+      .image-mobile {
+        display: none;
+      }
+    }
+
     #carousel-ul li div[class^="carousel-content-"] {
       position: absolute;
       top: 15%;

@@ -26,6 +26,18 @@
         max-width: 748px;
       }
 
+      #carousel-ul  li {
+        .image-desktop {
+          display:none;
+        }
+        .image-tablet {
+          display:none;
+        }
+        .image-mobile {
+          display: block;
+        }
+      }
+
       #carousel-ul li div[class^="carousel-content-"] {
         left: 0px;
         max-width: 600px;
